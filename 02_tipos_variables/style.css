@@ -1,0 +1,38 @@
+*{
+
+}
+nav{
+    background-color: blue;
+    padding: 10px;
+
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+li{
+    margin: 0 15px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+a:hover{
+color: rgba(195, 0, 255, 0.459);
+
+}
+
+.operaciones{
+    padding: 50px;
+
+}
+
+button{
+    background-color: rgba(137, 43, 226, 0.418);
+    padding: 10px;
+}
