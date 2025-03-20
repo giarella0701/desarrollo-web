@@ -41,7 +41,7 @@ function verificacionAcceso(){ //Ejercicio 6
 
 function descuento(){ //Ejercicio 7
     let edad = prompt("Ingresa tu edad:")
-    let esEstudiante = 
+    let esEstudiante = prompt("Eres estudiate?")
 }
 
 function validacionUsuario(){//Ejercicio 8
