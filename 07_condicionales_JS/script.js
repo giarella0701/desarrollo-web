@@ -26,29 +26,3 @@ function verificaUsuario(){  //Ejercicio 3
 //Ejercicio 4
 
 //Ejercicio 5
-
-function verificacionAcceso(){ //Ejercicio 6
-    let edad = prompt("Ingresa tu edad:")
-    let aceptaTerminos = ("¿Acepta terminos y condiciones?")
-
-    if(edad >= 18 && aceptaTerminos){
-        alert("Acceso permitido")
-    } else {
-        alert("Acceso denegado")
-    }
-    
-}                
-
-function descuento(){ //Ejercicio 7
-    let edad = prompt("Ingresa tu edad:")
-    let esEstudiante = prompt("Eres estudiate?")
-}
-
-function validacionUsuario(){//Ejercicio 8
-    let usuario = prompt("Ingresa tu usuario:")
-    let contraseña = prompt("Ingresa tu contraseña:")
-
-}
-//Ejercicio 9
-
-//Ejercicio 10
