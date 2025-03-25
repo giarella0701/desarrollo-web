@@ -47,7 +47,7 @@ function maquinaCondiciones(){ //Ejercicio 9
 
 
 function estadoSeguridad(){ //Ejercicio 10
-    let bloqueado 
-    let tieneCredenciales 
+    let bloqueado = prompt("Esta bloqueado?")
+    let tieneCredenciales = prompt("Tiene Credenciales?")
 
 }
