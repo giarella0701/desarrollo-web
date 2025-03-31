@@ -21,13 +21,25 @@ function bucleF(){
 function contarNumeros(){
     let n = parseInt(prompt("Ingrese un numero entero:"));
     let count = 1;
-    let array = [];
+    let array = []; //lista vacia
     while(count <= n){
-        array.push(count);
-        count++
+        array.push(count); //inserta valor al final del array
+        count++ //incrementa 1 al contador
     }
     alert(`Contando: ${array.join(" - ")}`)
 }
+
+function disminuir(){
+    let n = parseInt(prompt("Ingrese cualquier numero:"));
+    let limite = 1;
+    let array = []; //lista vacia
+    while(limite <= n){
+        array.push(n); //inserta valor al final del array
+        n--; //disminuye 1 al contador
+    }
+    alert(`Contando: ${array.join(" - ")}`)
+}
+
 
 function sumarNumeros(){
     let suma = 0;
