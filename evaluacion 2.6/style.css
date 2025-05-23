@@ -1,0 +1,58 @@
+/* Reseteo básico de márgenes, padding y box-sizing para una base uniforme */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del cuerpo: tipografía y fondo suave */
+body{
+    font-family: Arial, sans-serif;
+    background-color: #fef6ec;
+}
+
+/* Encabezado principal de la página */
+.header{
+    background-color: #2f4a63;  /* Azul oscuro */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Contenedor central donde se agrupa el contenido */
+.container{
+    background: white;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);  /* Sombra suave */
+}
+
+/* Sección introductoria destacada */
+.intro{
+    background-color: #e3711e;  /* Naranja fuerte */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor flexible para agrupar varios bloques en filas */
+.bloques{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* Permite que los bloques pasen a otra línea si no hay espacio */
+    gap: 10px;         /* Espacio entre bloques */
+}
+
+/* Estilo individual de cada bloque */
+.bloque{
+    flex: 1;  /* Se expande para llenar el espacio disponible */
+    background-color: #d14900;  /* Naranja oscuro */
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
