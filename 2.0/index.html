@@ -75,48 +75,52 @@
 
     <h1>Trabajo JS</h1>
 
+<main class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Agregar compras</h5>
+            <input type="text" class="form-control" id="lista">
+            <p class="card-text" id="resultado"></p>
+            <a onclick="agregarelemetocompra()" href="#" class="btn btn-danger">Agregar</a>
+        </div>
+    </div>
+</main>
+
+
 <!-- Tarjeta Bootstrap-->
-<div class="row row-cols-1 row-cols-md-2 g-4">
-<div class="col">
-    <div class="card 1">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-<button type="button" class="btn btn-outline-primary">Ejercicio 1</button>
-    </div>
-    </div>
-</div>
+<div class="row row-cols-2 row-cols-md-3 g-4">
 <div class="col">
     <div class="card 2">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-<button type="button" class="btn btn-outline-secondary">Ejercicio 2</button>
+        <h5 class="card-title">Quitar ultimo</h5>
+<button type="button" class="btn btn-outline-secondary" onclick="quitar_ultimo()">Ejercicio 2</button>
     </div>
     </div>
 </div>
 <div class="col">
     <div class="card 3">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-<button type="button" class="btn btn-outline-success">Ejercicio 3</button>
+        <h5 class="card-title">Colores</h5>
+<button type="button" class="btn btn-outline-success" onclick="agregar_color()">Ejercicio 3</button>
     </div>
     </div>
 </div>
 <div class="col">
     <div class="card 4">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-<button type="button" class="btn btn-outline-danger">Ejercicio 4</button>
+        <h5 class="card-title">Quitar color</h5>
+<button type="button" class="btn btn-outline-danger" onclick="quitar_color()">Ejercicio 4</button>
     </div>
     </div>
 </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="row row-cols-2 row-cols-md-4 g-4">
 <div class="col">
     <div class="card 5">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-<button type="button" class="btn btn-outline-warning">Ejercicio 5</button>
+        <h5 class="card-title">Combinacion</h5>
+<button type="button" class="btn btn-outline-warning" onclick="combinar()">Ejercicio 5</button>
     </div>
     </div>
 </div>
@@ -132,7 +136,7 @@
     <div class="card 7">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-<button type="button" class="btn btn-outline-light">Ejercicio 7</button>
+<button type="button" class="btn btn-outline-success">Ejercicio 7</button>
     </div>
     </div>
 </div>
@@ -146,7 +150,7 @@
 </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="row row-cols-2 row-cols-md-4 g-4">
 <div class="col">
     <div class="card 9">
 
