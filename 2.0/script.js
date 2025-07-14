@@ -1,58 +1,44 @@
-console.log("Funcionando correctamente");
+const resultado = document.getElementById("resultado");
 
-//Ejercicio 1
-let listacompras = [];
-
-function agregarelemetocompra() {
-    let elemento = document.getElementById("lista").value; //llama el elemento por su id "get.ElemetById"
-
-    // Agregar a la lista de compras
-    listacompras.push(elemento);
-
-    // Crear un nuevo <li> y agregarlo al <p id="resultado">
-
-    let silenhill = document.createElement("li");
-    silenhill.innerText = elemento;
-
-    let resultado = document.getElementById("resultado");
-    resultado.appendChild(silenhill);
-
-    // Mostrar en consola
-    console.log(elemento);
+function agregarElementoCompra() {
+    let elemento = document.getElementById("lista").value;
+    // Crear un elemento html --> CreateElement
+    let item = document.createElement("li"); 
+    // Inner texto es lo que va a estar dentro del elemento "li"
+    item.innerText = elemento;
+    //appendChild inserta un valor en el elemento padre "resultado"
+    resultado.appendChild(item);
 }
 
-//Ejercicio 2
-function quitar_ultimo(){
-let comprar = ["pan","leche","huevos"]
-    let eliminar = comprar.pop();
+let carrito = [];
 
-    alert("Producto eliminado: " + eliminar);
+function mostrarListaCompra() {
+    const lista = document.getElementById("resultado2");
+    lista.innerHTML = ""; // Limpiar antes de mostrar
+
+    for (let i = 0; i < carrito.length; i++){
+        const li = document.createElement("li")
+        li.className = "list-group-item d-flex justify-content-between align-items-center mb-2";
+        li.textContent = `${carrito[i]}`;
+        lista.appendChild(li);
+    }
 }
 
-//Ejercicio 3
-function agregar_color(){
-    let colores = ["rojo", "azul"];
+function agregarElemento2() {
+    const input = document.getElementById("lista2");
+    const valor = input.value.trim(); // Guarda valor sin espacios extras
 
-colores.unshift("amarillo");
-alert("Colores: " + colores.join(" - "))
+    if (valor === "") return;
+    carrito.push(valor) // Agregar valor al final
+
+    input.value = "";
+    input.focus(); // Agrega foco hacia input
+    mostrarListaCompra()
 }
 
-//Ejercicio 4
-function quitar_color(){
-let colores = ["amarillo","rojo", "azul"];
-let eliminado = colores.shift();
-
-alert("Color eliminado: " + eliminado);
-}
-
-//Ejercicio 5
-function combinar(){
-    let numeros = [ 10, 20, 30];
-
-    numeros.push(40);
-    numeros.shift();
-    numeros.unshift(5);
-    numeros.pop();
-
-    alert("Arreglo final: " + numeros.join(" - "));
+function eliminarUltimoElemento() {
+    if (carrito.length > 0) {
+        carrito.pop();
+    }
+    mostrarListaCompra()
 }
