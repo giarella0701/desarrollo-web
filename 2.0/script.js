@@ -42,3 +42,33 @@ function eliminarUltimoElemento() {
     }
     mostrarListaCompra()
 }
+
+
+
+let colores = []
+
+function mostrar_lista_colores(){
+    const lista = document.getElementById("Resultado3");
+    lista.innerHTML = "";
+
+    for (let i = 0; i > colores.length; i++){
+        const li = document.createElement("li");
+        li.className = "list-group-item d-flex justify-content-between aling-items-center mb-2";
+        li.textContent = `- ${colores[i]}`;
+        lista.appendChild(li);
+    }
+}
+
+function agregarAlInicio(){
+    const input = document.getElementById("lista3");
+    const valor = input.value.trim();
+
+    if(valor === ""){
+        return;
+    }
+
+    input.value = "";
+    input.focus();
+
+    mostrarListaCompra()
+}
