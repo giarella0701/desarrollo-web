@@ -123,7 +123,7 @@ function agregar_inicio_ej5(){
     numeros.unshift(valor) // Agregar valor al final
 
     input.value = "";
-    input.focus();
+    input.focus();  //focus: activa el campo hacia el imput
     mostrarListaNumeros()
 }
 
@@ -152,3 +152,18 @@ function eliminar_ultimo_ej5(){
     }
     mostrarListaNumeros()
 }
+
+//ejercicio 6
+let orden = [
+    function mostar_lista_orden(){
+        const lista = document.createElementById("Resultado6");
+        lista.innerHTML = "";
+
+    for (let i = 0; i< orden.length; i++)
+    const li = document.createElement("li"); //variable constante(no se puede modificar)
+    li.className = "list-group-item d-flex justify-content-between aling-items-center mb-2";
+    li.textContent = `${orden[i]}`;
+    lista.appendChild(li);
+    }
+]
+
