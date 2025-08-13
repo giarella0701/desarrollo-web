@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema PIR para Ahorro Energético</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <div class="overlay">
+            <h1>EcoSense</h1>
+            <p>Sistema PIR para Ahorro Energético</p>
+        </div>
+    </header>
+
+
+
+    <section id="problema">
+        <h2>Problema y ODS</h2>
+        <p>Existe un gasto innecesario de energía en las instituciones educativas debido a un mal uso. 
+        Según la Agencia de Sostenibilidad Energética (AgenciaSE), entre un 20% y 40% de la energía consumida 
+        en escuelas puede ser reducida con medidas de eficiencia energética. 
+        Este proyecto contribuye a los ODS 7, 12 y 13.</p>
+    </section>
+
+    <section id="solucion" class="bg-light">
+        <h2>Solución Propuesta</h2>
+        <p>Implementamos un sistema IoT con sensores PIR y Raspberry Pi que detecta la presencia humana 
+        y apaga automáticamente luces y dispositivos cuando no hay actividad. 
+        Esto ayuda a reducir el gasto energético y concienciar sobre el uso responsable de la energía.</p>
+    </section>
+
+
+
+    <section id="contador" class="bg-light">
+        <h2>Ahorro Energético Estimado</h2>
+        <p>Gracias al sistema, estimamos un ahorro constante de energía:</p>
+        <div class="counter-container" id="energyCounter" data-target="1234">0</div>
+            <span id="energyCounter">0</span> kWh
+        </div>
+        <small>Simulación en tiempo real</small>
+    </section>
+
+    <div class="energy-simulator">
+  <h2>Simulador de Ahorro Energético</h2>
+  <canvas id="energyChart" width="400" height="200"></canvas>
+  
+  <div class="controls">
+    <button onclick="setMovement(true)">Simular Movimiento</button>
+    <button onclick="setMovement(false)">Simular Inactividad</button>
+  </div>
+  
+  <p>Consumo actual: <span id="currentConsumption">0</span> W</p>
+  <p>Energía ahorrada: <span id="savedEnergy">0</span> Wh</p>
+</div>
+
+<div class="energy-simulator">
+  <h2>Simulador de Ahorro Energético</h2>
+
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="metric-label">Consumo actual</div>
+      <div class="metric-value"><span id="currentConsumption">0</span><span class="unit">W</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Energía ahorrada</div>
+      <div class="metric-value"><span id="savedEnergy">0</span><span class="unit">Wh</span></div>
+    </div>
+  </div>
+
+  <canvas id="energyChart"></canvas>
+
+  <div class="controls">
+    <button class="btn" onclick="setMovement(true)">Simular Movimiento</button>
+    <button class="btn secondary" onclick="setMovement(false)">Simular Inactividad</button>
+  </div>
+
+  <div class="legend">Gráfico en tiempo real – demostración educativa</div>
+  <div class="sim-footer">Sistema PIR • Raspberry Pi • Relé</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let energyData = [0];
+let timeLabels = [0];
+let currentConsumption = 0;
+let savedEnergy = 0;
+let movementDetected = false;
+let timeCounter = 1;
+
+const ctx = document.getElementById('energyChart').getContext('2d');
+const chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: timeLabels,
+        datasets: [{
+            label: 'Consumo de Energía (W)',
+            data: energyData,
+            borderColor: '#00ff99',
+            backgroundColor: 'rgba(0,255,153,0.2)',
+            fill: true,
+            tension: 0.3
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+function setMovement(state) {
+    movementDetected = state;
+}
+
+setInterval(() => {
+    currentConsumption = movementDetected ? 100 : 20; // Simulación: 100W con movimiento, 20W sin
+    if (!movementDetected) {
+        savedEnergy += 80 / 60; // ahorro en Wh cada segundo
+    }
+    
+    document.getElementById("currentConsumption").textContent = currentConsumption;
+    document.getElementById("savedEnergy").textContent = savedEnergy.toFixed(2);
+    
+    energyData.push(currentConsumption);
+    timeLabels.push(timeCounter++);
+    
+    if (energyData.length > 20) {
+        energyData.shift();
+        timeLabels.shift();
+    }
+    
+    chart.update();
+}, 1000);
+</script>
+
+
+    <section id="galeria" class="bg-light">
+        <h2>Galería</h2>
+        <div class="gallery">
+            <img src="diagrama.png" alt="Diagrama del sistema">
+            <img src="prototipo.jpg" alt="Prototipo armado">
+            <img src="sensor.jpg" alt="Sensor PIR">
+        </div>
+    </section>
+
+    <section id="equipo">
+        <h2>Equipo</h2>
+        <p><strong>Integrantes:</strong> Neithan Véliz, Ariel Gonzales, Giarella Avello, Matias Nuñez, Gonzalo Hurtado, Ariel Tobar</p>
+        <p><strong>Institución:</strong> [Liceo Comercial Vate Vicente Huidobro]</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sistema PIR para Ahorro Energético - Feria TP</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
