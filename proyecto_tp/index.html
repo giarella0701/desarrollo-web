@@ -1,163 +1,170 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema PIR para Ahorro Energético</title>
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Página informativa EcoSense - Proyecto TP</title>
 </head>
+
 <body>
-    <header>
-        <div class="overlay">
-            <h1>EcoSense</h1>
-            <p>Sistema PIR para Ahorro Energético</p>
-        </div>
+    <header class="topbar">
+    <div class="brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <strong>EcoSense</strong>
+    </div>
+    <nav class="nav">
+        <a href="#intro">Inicio</a>
+        <a href="#funciona">¿Cómo funciona?</a>
+        <a href="#propuesta">Solución</a>
+        <a href="#tecnologias">Tecnologías</a>
+    </nav>
     </header>
 
-
-
-    <section id="problema">
-        <h2>Problema y ODS</h2>
-        <p>Existe un gasto innecesario de energía en las instituciones educativas debido a un mal uso. 
-        Según la Agencia de Sostenibilidad Energética (AgenciaSE), entre un 20% y 40% de la energía consumida 
-        en escuelas puede ser reducida con medidas de eficiencia energética. 
-        Este proyecto contribuye a los ODS 7, 12 y 13.</p>
-    </section>
-
-    <section id="solucion" class="bg-light">
-        <h2>Solución Propuesta</h2>
-        <p>Implementamos un sistema IoT con sensores PIR y Raspberry Pi que detecta la presencia humana 
-        y apaga automáticamente luces y dispositivos cuando no hay actividad. 
-        Esto ayuda a reducir el gasto energético y concienciar sobre el uso responsable de la energía.</p>
-    </section>
-
-
-
-    <section id="contador" class="bg-light">
-        <h2>Ahorro Energético Estimado</h2>
-        <p>Gracias al sistema, estimamos un ahorro constante de energía:</p>
-        <div class="counter-container" id="energyCounter" data-target="1234">0</div>
-            <span id="energyCounter">0</span> kWh
+    <main>
+    <!-- Sección principal -->
+    <section id="intro" class="container_uno card">
+        <div class="left">
+        <h1>EcoSense</h1>
+        <p class="tagline">Tecnología que protege tu energía</p>
+        <p>
+            EcoSense es un sistema innovador que permite monitorear y optimizar
+            el consumo eléctrico en salas. A través de sensores inteligentes y
+            un panel web sencillo, obtienes visibilidad en tiempo real del uso
+            energético y recomendaciones para reducir el gasto.
+        </p>
+        <p>
+            El objetivo es disminuir la huella de carbono y fomentar hábitos
+            responsables en la comunidad educativa sin depender de acciones
+            manuales constantes.
+        </p>
+        <div class="cta-row">
+            <a class="btn btn-primary" href="#propuesta">Ver la propuesta</a>
+            <a class="btn btn-outline" href="#funciona">Saber cómo funciona</a>
         </div>
-        <small>Simulación en tiempo real</small>
-    </section>
-
-    <div class="energy-simulator">
-  <h2>Simulador de Ahorro Energético</h2>
-  <canvas id="energyChart" width="400" height="200"></canvas>
-  
-  <div class="controls">
-    <button onclick="setMovement(true)">Simular Movimiento</button>
-    <button onclick="setMovement(false)">Simular Inactividad</button>
-  </div>
-  
-  <p>Consumo actual: <span id="currentConsumption">0</span> W</p>
-  <p>Energía ahorrada: <span id="savedEnergy">0</span> Wh</p>
-</div>
-
-<div class="energy-simulator">
-  <h2>Simulador de Ahorro Energético</h2>
-
-  <div class="metrics">
-    <div class="metric-card">
-      <div class="metric-label">Consumo actual</div>
-      <div class="metric-value"><span id="currentConsumption">0</span><span class="unit">W</span></div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-label">Energía ahorrada</div>
-      <div class="metric-value"><span id="savedEnergy">0</span><span class="unit">Wh</span></div>
-    </div>
-  </div>
-
-  <canvas id="energyChart"></canvas>
-
-  <div class="controls">
-    <button class="btn" onclick="setMovement(true)">Simular Movimiento</button>
-    <button class="btn secondary" onclick="setMovement(false)">Simular Inactividad</button>
-  </div>
-
-  <div class="legend">Gráfico en tiempo real – demostración educativa</div>
-  <div class="sim-footer">Sistema PIR • Raspberry Pi • Relé</div>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-let energyData = [0];
-let timeLabels = [0];
-let currentConsumption = 0;
-let savedEnergy = 0;
-let movementDetected = false;
-let timeCounter = 1;
-
-const ctx = document.getElementById('energyChart').getContext('2d');
-const chart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: timeLabels,
-        datasets: [{
-            label: 'Consumo de Energía (W)',
-            data: energyData,
-            borderColor: '#00ff99',
-            backgroundColor: 'rgba(0,255,153,0.2)',
-            fill: true,
-            tension: 0.3
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: { beginAtZero: true }
-        }
-    }
-});
-
-function setMovement(state) {
-    movementDetected = state;
-}
-
-setInterval(() => {
-    currentConsumption = movementDetected ? 100 : 20; // Simulación: 100W con movimiento, 20W sin
-    if (!movementDetected) {
-        savedEnergy += 80 / 60; // ahorro en Wh cada segundo
-    }
-    
-    document.getElementById("currentConsumption").textContent = currentConsumption;
-    document.getElementById("savedEnergy").textContent = savedEnergy.toFixed(2);
-    
-    energyData.push(currentConsumption);
-    timeLabels.push(timeCounter++);
-    
-    if (energyData.length > 20) {
-        energyData.shift();
-        timeLabels.shift();
-    }
-    
-    chart.update();
-}, 1000);
-</script>
-
-
-    <section id="galeria" class="bg-light">
-        <h2>Galería</h2>
-        <div class="gallery">
-            <img src="diagrama.png" alt="Diagrama del sistema">
-            <img src="prototipo.jpg" alt="Prototipo armado">
-            <img src="sensor.jpg" alt="Sensor PIR">
+        </div>
+        <div class="right">
+        <img src="img/prototipo.png" alt="prototipo" height="500vh" />
         </div>
     </section>
 
-    <section id="equipo">
-        <h2>Equipo</h2>
-        <p><strong>Integrantes:</strong> Neithan Véliz, Ariel Gonzales, Giarella Avello, Matias Nuñez, Gonzalo Hurtado, Ariel Tobar</p>
-        <p><strong>Institución:</strong> [Liceo Comercial Vate Vicente Huidobro]</p>
+    <!-- Nueva sección con más imágenes -->
+    <section id="funciona" class="container_dos card">
+        <h2>¿Cómo funciona?</h2>
+        <p>
+        EcoSense recopila datos de consumo y presencia para activar lógicas de
+        ahorro. El sistema muestra estados, alertas y métricas en un panel web
+        para que tomes decisiones informadas.
+        </p>
+        <div class="image_gallery">
+        <figure>
+            <img
+            src="img/diagrama.png"
+            alt="Diagrama del sistema EcoSense"
+            height="200vh"
+            />
+            <figcaption>Diagrama Sistema</figcaption>
+        </figure>
+        <figure>
+            <img
+            src="img/prototipo_arm.png"
+            alt="Prototipo armado"
+            height="200vh"
+            />
+            <figcaption>Prototipo armado</figcaption>
+        </figure>
+        <figure>
+            <img
+            src="img/sensor.png"
+            alt="Sensor PIR"
+            height="200vh"
+            />
+            <figcaption>Sensor PIR</figcaption>
+        </figure>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Sistema PIR para Ahorro Energético - Feria TP</p>
+    <!-- Sección propuesta -->
+    <section id="propuesta" class="container_tres card">
+        <h2>3. Propuesta de Solución Tecnológica</h2>
+        <p>
+        La solución propuesta es un prototipo físico de sistema IoT que
+        controla el uso de energía en salas mediante sensores de movimiento
+        tipo PIR (Passive Infrared Sensor).
+        </p>
+
+        <h3>Funcionamiento del sistema</h3>
+        <ol class="steps">
+        <li>
+            <strong>Detección:</strong> Los sensores PIR captan movimiento y
+            presencia humana en la sala.
+        </li>
+        <li>
+            <strong>Procesamiento:</strong> Una Raspberry Pi recibe la señal y
+            gestiona un temporizador de inactividad.
+        </li>
+        <li>
+            <strong>Acción:</strong> Si no hay detección por un tiempo definido,
+            la Raspberry Pi activa un módulo de relé que corta la energía a
+            dispositivos no esenciales (luces, proyectores, ventiladores, etc.).
+        </li>
+        <li>
+            <strong>Visualización:</strong> Un panel web permite monitorear el
+            estado del sistema, configurar el tiempo de apagado y consultar
+            registros de ahorro energético.
+        </li>
+        </ol>
+
+        <h3>Beneficios principales</h3>
+        <ul class="benefits">
+        <li>Reducción significativa del consumo eléctrico.</li>
+        <li>Disminución de emisiones de CO₂.</li>
+        <li>Fomento de la conciencia ambiental en la comunidad educativa.</li>
+        <li>
+            Automatización que no depende de la intervención constante de los
+            usuarios.
+        </li>
+        </ul>
+    </section>
+
+    <!-- Sección tecnologías -->
+    <section id="tecnologias" class="container_cuatro card">
+        <h2>4. Tecnologías Involucradas</h2>
+
+        <div class="tech-grid">
+        <article class="tech-card">
+            <h3>Hardware</h3>
+            <ul>
+            <li>Raspberry Pi (procesamiento y control).</li>
+            <li>Sensores PIR (detección de movimiento).</li>
+            <li>Sensor infrarrojo adicional (opcional).</li>
+            <li>Módulos de relé (conmutación de energía).</li>
+            <li>LEDs / LCD para indicadores.</li>
+            <li>Fuente de alimentación estable.</li>
+            <li>Caja protectora y cableado.</li>
+            </ul>
+        </article>
+        <article class="tech-card">
+            <h3>Software</h3>
+            <ul>
+            <li>Panel web (HTML, CSS, JS).</li>
+            <li>Servidor ligero en Raspberry Pi.</li>
+            <li>Base de datos para registros de ahorro.</li>
+            <li>API para configuración remota.</li>
+            </ul>
+        </article>
+        </div>
+    </section>
+    </main>
+
+    <footer class="site-footer">
+    <p>© <span id="year"></span> EcoSense • Proyecto TP</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      // Año dinámico
+    document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
