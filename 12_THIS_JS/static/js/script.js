@@ -1,19 +1,18 @@
-//Crear funcion de prueba This
-function example(elemento){
-    console.log("Elemento clickeado", elemento);
-}
-
-//Creacion de funcion TurnOff
-function turnOff(element){
-    if (element.innerText == "On" ){
-        element.innerText = "Off";
-    }else{
-        element.innerText = "On"
+    // Cambiar Login <-> Logout
+    function toggleLogin() {
+      let btn = document.getElementById("loginBtn");
+      btn.textContent = btn.textContent === "Login" ? "Logout" : "Login";
     }
-}
 
-//Funcion para elñiminar botn
+    // Remover botón Add Definition
+    function removeDefBtn() {
+      let btn = document.getElementById("addDefBtn");
+      btn.remove();
+    }
 
-function hide(elemet){
-    elemet.remove();
-}
+    // Incrementar likes
+    function addLike(button) {
+      let current = parseInt(button.textContent);
+      current++;
+      button.textContent = current + " likes";
+    }

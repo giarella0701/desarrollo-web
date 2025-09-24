@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dojonary</title>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-        <button onclick="example(this)">
-            Hazme click
-        </button>
-        <button onclick="turnOff(this)">On</button>
-        <button onclick="turnOff(this)">On</button>
-        <button onclick="turnOff(this)">On</button>
-        <button onclick="hide(this)">Eliminar</button>
+  <!-- HEADER -->
+  <div class="navbar">
+    <h1>Dojonary</h1>
+    <input type="text" placeholder="Search">
+    <button id="loginBoton" onclick="toggleLogin()">Login</button>
+  </div>
+
+  <!-- MAIN-->
+  <div class="container">
+   
+    <div class="definitions">
+      <!-- Carta 1 -->
+      <div class="card">
+        <div class="title">
+          ninja <span class="noun">noun</span>
         </div>
+        <div class="plural">Plural: ninjas</div>
+        <div class="desc">
+          A practitioner skilled in the 
+          <a href="#">Japanese</a> art of <a href="#">ninjutsu</a>
+        </div>
+        <button class="likeBtn" onclick="addLike(this)">0 likes</button>
+      </div>
+
+      <!-- Carta 2 -->
+      <div class="card">
+        <div class="title">
+          ninja <span class="noun">noun</span>
+        </div>
+        <div class="plural">Plural: ninjas</div>
+        <div class="desc">
+          A <a href="#">programmer</a> who breaks down problems with 
+          <a href="#">zen</a>-like focus
+        </div>
+        <button class="likeBtn" onclick="addLike(this)">0 likes</button>
+      </div>
     </div>
-    <script src="static/js/script.js"></script>
+
+    <!-- RIGHT SIDE -->
+    <div class="sidebar">
+      <h3>Dojonary is defined by <strong>YOU</strong></h3>
+      <button id="addDefBtn" onclick="removeDefBtn()">Add Definition</button>
+    </div>
+  </div>
+
+  <script src="static/js/script.js"></script>
 </body>
 </html>
