@@ -1,22 +1,23 @@
 
-function liked(element) {
-    let likeSpan = element.querySelector('span');
-    let incrementarLikes = parseInt(likeSpan.innerText);
-    incrementarLikes = incrementarLikes + 1;
-    likeSpan.innerText = incrementarLikes;
+function darMeGusta(elemento) {
+
+    let contadorSpan = elemento.querySelector('span');
+    let incrementarLikes = parseInt(contadorSpan.innerText);
+    incrementarLikes = incrementarLikes + 1; 
+    contadorSpan.innerText = incrementarLikes;
 }
 
 
-
-function login(element) {
-    if (element.innerText === "Login") {
-        element.innerText = "Logout";
+function iniciarSesion(elemento) {
+    if (elemento.innerText === "Iniciar Sesión") {
+        elemento.innerText = "Cerrar Sesión";
     } else {
-        element.innerText = "Login";
+        elemento.innerText = "Iniciar Sesión";
     }
 }
 
-function hide(element) {
-    // Oculta el botón.
-    element.style.display = 'none';
+
+function ocultar(elemento) {
+
+    elemento.style.display = 'none';
 }

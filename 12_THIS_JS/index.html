@@ -1,49 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojonary</title>
-
+    <title>Dojonary</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="top">
-            <h1 class="title">Dojonary</h1>
-            <input type="text" name="search" placeholder="Search" class="search">
-            <button class="btn login" onclick="login(this)">Login</button>
-        </div>
-        <div class="row">
-            <div class="flex-2">
-                <div class="box definition">
-                    <div class="left">
-                        <h1>ninja</h1>
-                        <p><em>noun</em></p>
-                        <p>Plural: <em>ninjas</em></p>
-                        <button class="btn like" onclick="liked(this)"><span id="like-1">13</span> likes</button>
+    <div class="contenedor"> <div class="encabezado"> <h1 class="titulo">Dojonario</h1> <input type="text" name="busqueda" placeholder="Buscar" class="busqueda"> <button class="btn iniciar-sesion" onclick="iniciarSesion(this)">Iniciar Sesión</button> </div>
+        <div class="fila"> <div class="flex-2">
+                <div class="caja definicion"> <div class="izquierda"> <h1>ninja</h1>
+                        <p><em>sustantivo</em></p> <p>Plural: <em>ninjas</em></p>
+                        <button class="btn me-gusta" onclick="darMeGusta(this)"> <span id="contador-1">13</span> me gusta
+                        </button>
                     </div>
-                    <p class="definition-text">A practitioner skilled in the <a href="#">Japanese</a> art of <a
-                            href="#">ninjutsu</a></p>
-                </div>
-                <div class="box definition">
-                    <div class="left">
+                    <p class="texto-definicion">Un practicante experto en el arte <a href="#">japonés</a> de <a
+                            href="#">ninjutsu</a></p> </div>
+                <div class="caja definicion">
+                    <div class="izquierda">
                         <h1>ninja</h1>
-                        <p><em>noun</em></p>
+                        <p><em>sustantivo</em></p>
                         <p>Plural: <em>ninjas</em></p>
-                        <button class="btn like" onclick="liked(this)"><span id="like-1">37</span> likes</button>
+                        <button class="btn me-gusta" onclick="darMeGusta(this)">
+                            <span id="contador-2">37</span> me gusta </button>
                     </div>
-                    <p class="definition-text">A <a href="#">programmer</a> who breaks down problems with <a
-                            href="#">zen</a>-like focus</p>
+                    <p class="texto-definicion">Un <a href="#">programador</a> que resuelve problemas con un enfoque de <a
+                            href="#">zen</a></p>
                 </div>
             </div>
             <div class="flex-1">
-                <div class="box">
-                    <h2>Dojonary is defined by YOU</h2>
-                    <button class="btn add" onclick="hide(this)">Add Definition</button>
-                </div>
+                <div class="caja">
+                    <h2>Dojonario es definido por TI</h2> <button class="btn agregar" onclick="ocultar(this)">Agregar Definición</button> </div>
             </div>
         </div>
     </div>
