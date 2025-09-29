@@ -1,19 +1,22 @@
-//Crear funcion de prueba This
-function example(elemento){
-    console.log("Elemento clickeado", elemento);
+
+function liked(element) {
+
+    let likeSpan = element.querySelector('span');
+    let currentLikes = parseInt(likeSpan.innerText);
+    currentLikes = currentLikes + 1; 
+    likeSpan.innerText = currentLikes;
 }
 
-//Creacion de funcion TurnOff
-function turnOff(element){
-    if (element.innerText == "On" ){
-        element.innerText = "Off";
-    }else{
-        element.innerText = "On"
+
+function login(element) {
+    if (element.innerText === "Login") {
+        element.innerText = "Logout";
+    } else {
+        element.innerText = "Login";
     }
 }
 
-//Funcion para elñiminar botn
 
-function hide(elemet){
-    elemet.remove();
+function hide(element) {
+    element.style.display = 'none';
 }
