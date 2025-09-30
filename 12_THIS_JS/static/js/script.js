@@ -19,5 +19,5 @@ function iniciarSesion(elemento) {
 
 function ocultar(elemento) {
 
-    elemento.style.display = 'none';
+    elemento.remove;
 }
