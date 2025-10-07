@@ -1,0 +1,153 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f3f3;
+}
+
+a {
+    color: #085394;
+    text-decoration: none;
+}
+
+.contenedor { 
+    margin: 0 auto;
+    max-width: 62.5rem; 
+    width: 100%;
+}
+
+
+.encabezado { 
+    background-color: #ccc;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid #000;
+}
+
+.titulo { 
+    font-family: 'Cairo', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.busqueda { 
+    flex: 1;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border: 2px solid #000;
+}
+
+
+.btn {
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px #000;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.iniciar-sesion { 
+    background-color: #2b78e4; 
+    color: #fff;
+}
+
+
+.fila { 
+    display: flex;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.flex-2 {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+
+.caja { 
+    border: 2px solid #000;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.definicion { 
+    display: flex;
+    flex-direction: column;
+}
+
+
+.definicion .izquierda { 
+    margin-bottom: 20px;
+}
+
+.definicion h1 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.definicion p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.definicion em {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.texto-definicion { 
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+
+.me-gusta { 
+    background-color: #ffd966; 
+    color: #000;
+    font-size: 1rem;
+    padding: 8px 18px;
+    box-shadow: 3px 3px #000;
+}
+
+
+.flex-1 .caja {
+    height: fit-content;
+}
+
+.flex-1 h2 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.agregar { 
+    background-color: #93c47d; 
+    color: #000;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
