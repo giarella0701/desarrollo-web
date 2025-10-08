@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VideoLab</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+
+<div class="top">
+    <h1>VideoLab</h1>
+
+    <div class="search-group">
+        <input type="text" placeholder="Search" name="query" class="search" />
+    </div>
+
+    <button class="btn">Login</button>
+</div>
+
+<!-- main content -->
+<div class="flex-container">
+
+    <!-- left column -->
+    <div class="col-l">
+
+        <!-- video principal -->
+        <video
+            id="video_main"
+            src="resources/video/gatito.mp4"
+            class="video_main"
+            controls
+            autoplay
+            loop
+        ></video>
+
+        <div class="row">
+            <div class="start">
+                <!-- Contenedor para alinear h1 y botón -->
+                <div class="title-and-button">
+                    <h1 id="video-title">Gatito</h1>
+                    <button class="btn">Subscribe</button>
+                </div>
+                <h3>1.3K Views | June, 18, 2021</h3>
+                <div class="user">
+                    <img src="resources/images/user.png" alt="user-circle" class="avatar-s" />
+                    <span class="user-name">Example Video Title</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- right column -->
+    <div class="col-r">
+        <h3 class="sub-header">Up Next</h3>
+
+        <div class="video-small">
+            <video
+                src="resources/video/g2.mp4"
+                alt="video placeholder"
+                class="vid-s"
+                data-title="Gato 1"
+                onclick="cambiarVideo(this)"
+                onmouseover="vistaPrevia(this)"
+                onmouseout="vistaPreviaPause(this)"
+            ></video>
+            <span class="video-title">Gato 1</span>
+        </div>
+
+        <div class="video-small">
+            <video
+                src="resources/video/2609752-hd_1920_1080_25fps.mp4"
+                alt="video placeholder"
+                class="vid-s"
+                data-title="Gato 2"
+                onclick="cambiarVideo(this)"
+                onmouseover="vistaPrevia(this)"
+                onmouseout="vistaPreviaPause(this)"
+            ></video>
+            <span class="video-title">Gato 2</span>
+        </div>
+
+        <div class="video-small">
+            <video
+                src="resources/video/12676816_1920_1080_24fps.mp4"
+                alt="video placeholder"
+                class="vid-s"
+                data-title="Gato 3"
+                onclick="cambiarVideo(this)"
+                onmouseover="vistaPrevia(this)"
+                onmouseout="vistaPreviaPause(this)"
+            ></video>
+            <span class="video-title">Gato 3</span>
+        </div>
+
+        <div class="video-small">
+            <video
+                src="resources/video/g3.mp4"
+                alt="video placeholder"
+                class="vid-s"
+                data-title="Gato 4"
+                onclick="cambiarVideo(this)"
+                onmouseover="vistaPrevia(this)"
+                onmouseout="vistaPreviaPause(this)"
+            ></video>
+            <span class="video-title">Gato 4</span>
+        </div>
+    </div>
+</div>
+
+<script src="static/js/script.js"></script>
+</body>
+</html>
