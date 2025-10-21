@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El tiempo</title>
+        <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <h1>Dojo Weather</h1>
+<!-- En tu HTML, modificar las ciudades -->
+<ul>
+    <li onclick="showCityAlert(this)">Burbank</li>
+    <li onclick="showCityAlert(this)">Chicago</li>
+    <li onclick="showCityAlert(this)">Dallas</li>
+</ul>
+    </div>
+
+<div class="container">
+    <div class="container-header">
+        <h2>San Jose</h2>
+        <div class="temp-selector">
+            <h4>show temperature in</h4>
+            <select id="temperatura" onchange="ConvertidorTemperatura(this)">
+                <option value="C">°C</option>
+                <option value="F">°F</option>
+            </select>
+        </div>
+    </div>
+
+
+        <div class="agua">
+
+            <div class="dia">
+                <h3>Today</h3>
+                <img src="resources/images/some_rain.png"Rain">
+                <p>Some Rain</p>
+                <div class="temperaturas">
+                    <span class="alto">24</span>
+                    <span class="bajo">18</span>
+                </div>
+            </div>
+
+            <div class="dia">
+                <h3>Tomorrow</h3>
+                <img src="resources/images/some_sun.png" alt="Sun">
+                <p>Some Sun</p>
+                <div class="temperaturas">
+                    <span class="alto">27</span>
+                    <span class="bajo">19</span>
+                </div>
+            </div>
+
+            <div class="dia">
+                <h3>Friday</h3>
+                <img src="resources/images/some_clouds.png" alt="Clouds">
+                <p>Some Clouds</p>
+                <div class="temperaturas">
+                    <span class="alto">21</span>
+                    <span class="bajo">16</span>
+                </div>
+            </div>
+
+            <div class="dia">
+                <h3>Saturday</h3>
+                <img src="resources/images/some_sun.png" alt="Sun">
+                <p>Some Sun</p>
+                <div class="temperaturas">
+                    <span class="alto">26</span>
+                    <span class="bajo">21</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Cookie" id="Cookie">
+        <img src="resources/images/cookie.png" alt="Cookie">
+        <p><strong>Stop! Cookie Time</strong><br>
+        We use cookies (sandly not the edible ones) to personalize
+    content and ads,
+                to provide social media freatures and to analyze our 
+            traffic. <a href="#">Read more..</a> 
+        </p>
+        <button onclick="hideCookie()">I Accept</button>
+    </div>
+        <script src="static/js/script.js"></script>
+</body>
+</html>
