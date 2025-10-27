@@ -1,31 +1,36 @@
 /*
   Archivo: style.css
-  Propósito: Estilos basados en el diseño visual de referencia (tonos pastel),
-  con clases en español y uso de display: flex y efectos hover.
+  Propósito: Estilos para portafolio profesional con paleta pastel.
+  Estructura simplificada, uso de variables y clases en español.
 */
 
-/* VARIABLES DE COLOR BASADAS EN EL DISEÑO (Tonos tierra/rosados) */
+/* ======================================= */
+/* 🎨 1. VARIABLES DE COLOR (Paleta Pastel) */
+/* ======================================= */
 :root {
-    --color-fondo-principal: #fefcf7;       /* Blanco/Crema suave */
-    --color-acento-principal: #d8a7a7;      /* Rosa suave (Para elementos principales/hover) */
-    --color-tarjeta-fondo: #fce7e7;         /* Rosa claro (Para el fondo de la tarjeta principal) */
-    --color-texto-oscuro: #3d3434;          /* Marrón oscuro/Negro suave */
-    --color-texto-claro: #ffffff;
-    --color-nav-fondo: rgba(100, 70, 70, 0.9); /* Fondo oscuro/tierra para el nav */
+    --color-fondo-principal: #f5c9f1;       /* Fondo principal (Rosa/Púrpura suave) */
+    --color-acento-principal: #ac49b9;      /* Púrpura suave (Para acentos y hover) */
+    --color-tarjeta-fondo: #FFFFFF;         /* Blanco puro (Para el contenido de la tarjeta) */
+    --color-texto-oscuro: #161515;          /* Negro suave */
+    --color-texto-claro: #FFFFFF;           /* Texto sobre fondo oscuro */
+    --color-nav-fondo: rgba(232, 138, 245, 0.9); /* Púrpura semi-transparente para nav */
     
-    /* Variables de pastel para Habilidades */
-    --pastel-primary: #a2c8f0;    /* Azul claro */
-    --pastel-info: #b3e0d8;       /* Turquesa claro */
-    --pastel-success: #c5e8c4;    /* Verde claro */
-    --pastel-warning: #f8e5c4;    /* Amarillo/Melocotón claro */
+    /* Colores pastel para Habilidades */
+    --pastel-primary: #a2c8f0;      /* Azul claro */
+    --pastel-info: #b3e0d8;         /* Turquesa claro */
+    --pastel-success: #c5e8c4;      /* Verde claro */
+    --pastel-warning: #f8e5c4;      /* Melocotón claro */
 }
 
-/* ESTILOS GENERALES Y TIPOGRAFÍA */
+/* ======================================= */
+/* 🌎 2. ESTILOS BASE Y TIPOGRAFÍA */
+/* ======================================= */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Usar 'Montserrat' si se importó en el HTML */
     background-color: var(--color-fondo-principal);
     color: var(--color-texto-oscuro);
-    padding-top: 56px; 
+    padding-top: 56px; /* Para el navbar fijo */
+    line-height: 1.6;
 }
 
 h1, h2, h3, .texto-resaltado {
@@ -33,44 +38,36 @@ h1, h2, h3, .texto-resaltado {
     color: var(--color-texto-oscuro);
 }
 
-/* ESTILOS DE SECCIÓN GENERALES */
+/* Estilos de sección generales */
 section {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
 
 .bg-light {
-    background-color: #f5f0f0 !important; /* Un fondo ligeramente diferente al principal */
+    background-color: #f5f0f0 !important; /* Fondo alterno sutil */
 }
 
-/* LAYOUT CON FLEXBOX (Para centrar la presentación) */
-.seccion-presentacion {
-    height: 90vh;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    padding: 80px 0;
-    background: radial-gradient(circle at 10% 20%, rgba(255, 230, 230, 0.5) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(216, 167, 167, 0.5) 0%, transparent 50%),
-                var(--color-fondo-principal);
-}
 
-/* NAVBAR Y ESTADO ACTIVO */
+/* ======================================= */
+/* 🧭 3. BARRA DE NAVEGACIÓN (NAVBAR) */
+/* ======================================= */
 #navegacionPrincipal {
     background-color: var(--color-nav-fondo);
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-nav .enlace-nav {
     color: var(--color-texto-claro);
     font-weight: 500;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
     padding: 10px 15px;
+    transition: all 0.3s ease;
 }
 
 .navbar-nav .enlace-nav:hover {
     color: var(--color-acento-principal);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar-nav .enlace-nav.activo {
@@ -78,14 +75,41 @@ section {
     border-bottom: 2px solid var(--color-acento-principal);
 }
 
-/* ESTILO DE LA TARJETA PRINCIPAL (Presentación) */
+/* ======================================= */
+/* 🌟 4. SECCIÓN PRESENTACIÓN (HERO) */
+/* ======================================= */
+.seccion-presentacion {
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; /* Contenedor para la imagen absoluta */
+    background-color: var(--color-fondo-principal);
+    padding: 0;
+}
+
+/* Estilo para la imagen HTML de fondo */
+.img-fondo-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 0; 
+    opacity: 0.45; /* Sutil transparencia pastel */
+}
+
+/* Tarjeta Principal Flotante */
 .contenedor-tarjeta-principal {
     max-width: 900px;
     width: 90%;
-    background-color: var(--color-tarjeta-fondo);
+    background-color: var(--color-tarjeta-fondo); /* Fondo de la tarjeta (Blanco) */
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Sombra suave */
     overflow: hidden;
+    position: relative; 
+    z-index: 10; /* La tarjeta siempre encima */
 }
 
 .imagen-perfil {
@@ -93,8 +117,9 @@ section {
     object-fit: cover;
     width: 100%;
     display: block;
-    border-top-left-radius: 20px; 
-    border-bottom-left-radius: 20px;
+    /* Redondeo solo en la parte izquierda para la vista de escritorio */
+    border-top-left-radius: 8px; 
+    border-bottom-left-radius: 10px;
 }
 
 .cuerpo-tarjeta {
@@ -102,14 +127,12 @@ section {
 }
 
 /* ======================================= */
-/* 🚀 SECCIÓN HABILIDADES (Skills) */
+/* 🚀 5. SECCIÓN HABILIDADES (Skills) */
 /* ======================================= */
-
 .progress {
     height: 1.5rem;
-    background-color: #e9ecef; /* Fondo de progreso sutil */
+    background-color: #eee9ef;
     border-radius: 0.5rem;
-    overflow: hidden;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -117,6 +140,7 @@ section {
     color: var(--color-texto-oscuro);
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transition: width 1s ease-in-out; /* Animación de carga */
 }
 
 /* Colores pastel para las barras de progreso */
@@ -127,7 +151,7 @@ section {
 
 
 /* ======================================= */
-/* 🎓 SECCIÓN FORMACIÓN Y EXPERIENCIA */
+/* 🎓 6. FORMACIÓN, EXPERIENCIA y REFERENCIAS (Tarjetas de CV) */
 /* ======================================= */
 
 .tarjeta-formacion, .tarjeta-experiencia {
@@ -135,8 +159,15 @@ section {
     border-left: 5px solid var(--color-acento-principal); /* Borde de acento */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.tarjeta-formacion:hover, .tarjeta-experiencia:hover {
+    transform: translateY(-3px); /* Efecto lift sutil */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Listas de Certificaciones y Logros */
 .lista-certificaciones .list-group-item {
     border: none;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
@@ -145,57 +176,56 @@ section {
 }
 
 .lista-certificaciones .list-group-item:hover {
-    background-color: rgba(216, 167, 167, 0.1); /* Hover suave */
+    background-color: rgba(172, 73, 185, 0.05); /* Hover con acento */
 }
 
-/* Estilo para los badges */
 .lista-certificaciones .badge {
     background-color: var(--color-acento-principal) !important;
     color: var(--color-texto-claro);
     font-weight: normal;
 }
 
-/* Estilos para la lista de logros en Experiencia */
 .tarjeta-experiencia ul li {
-    padding: 5px 0;
-    /* Uso de display: flex para alinear checkmark */
     display: flex;
     align-items: flex-start;
+    padding: 5px 0;
 }
 
-.tarjeta-experiencia .text-success {
+.tarjeta-experiencia .fa-check-circle {
     color: #4CAF50 !important; /* Verde estándar para check */
+    margin-right: 8px;
 }
 
-/* ======================================= */
-/* 📜 SECCIÓN REFERENCIAS */
-/* ======================================= */
-
+/* Estilo para la alerta de Referencias */
 .alert-info {
-    background-color: #e0f7fa; /* Azul claro pastel */
-    border-color: #b3e5fc;
-    color: #00796b;
+    background-color: #dfb8ee;
+    border-color: #eb9cd3;
+    color: #790069;
+    border-left: 5px solid var(--color-acento-principal);
 }
 
+
 /* ======================================= */
-/* 📧 SECCIÓN CONTACTO */
+/* 📧 7. SECCIÓN CONTACTO Y FOOTER */
 /* ======================================= */
 
-#contacto {
-    background-color: var(--color-fondo-principal);
-}
-
-/* Estilos para los íconos de redes sociales */
+/* Íconos de redes sociales */
 #contacto .fa-2x {
     color: var(--color-texto-oscuro);
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #contacto .fa-2x:hover {
     color: var(--color-acento-principal);
+    transform: scale(1.1);
 }
 
-/* Estilo del botón de envío */
+/* Estilo de botones y formularios */
+.form-control:focus {
+    border-color: var(--color-acento-principal);
+    box-shadow: 0 0 0 0.25rem rgba(172, 73, 185, 0.25);
+}
+
 #contacto .btn-primary {
     background-color: var(--color-acento-principal);
     border-color: var(--color-acento-principal);
@@ -203,21 +233,26 @@ section {
 }
 
 #contacto .btn-primary:hover {
-    background-color: #c59696; /* Tono más oscuro al pasar el ratón */
-    border-color: #c59696;
+    background-color: #8c369a; /* Tono más oscuro al pasar el ratón */
+    border-color: #8c369a;
 }
 
-/* DISEÑO RESPONSIVO */
+
+/* ======================================= */
+/* 📱 8. DISEÑO RESPONSIVO */
+/* ======================================= */
 @media (max-width: 768px) {
     .seccion-presentacion {
         height: auto;
         padding: 50px 0;
     }
     .contenedor-tarjeta-principal {
+        width: 95%;
         border-radius: 10px;
     }
     .imagen-perfil {
         height: 250px; 
+        /* Redondeo para móviles */
         border-radius: 10px 10px 0 0; 
     }
 }
