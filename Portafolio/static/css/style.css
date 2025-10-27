@@ -1,0 +1,223 @@
+/*
+  Archivo: style.css
+  Propósito: Estilos basados en el diseño visual de referencia (tonos pastel),
+  con clases en español y uso de display: flex y efectos hover.
+*/
+
+/* VARIABLES DE COLOR BASADAS EN EL DISEÑO (Tonos tierra/rosados) */
+:root {
+    --color-fondo-principal: #fefcf7;       /* Blanco/Crema suave */
+    --color-acento-principal: #d8a7a7;      /* Rosa suave (Para elementos principales/hover) */
+    --color-tarjeta-fondo: #fce7e7;         /* Rosa claro (Para el fondo de la tarjeta principal) */
+    --color-texto-oscuro: #3d3434;          /* Marrón oscuro/Negro suave */
+    --color-texto-claro: #ffffff;
+    --color-nav-fondo: rgba(100, 70, 70, 0.9); /* Fondo oscuro/tierra para el nav */
+    
+    /* Variables de pastel para Habilidades */
+    --pastel-primary: #a2c8f0;    /* Azul claro */
+    --pastel-info: #b3e0d8;       /* Turquesa claro */
+    --pastel-success: #c5e8c4;    /* Verde claro */
+    --pastel-warning: #f8e5c4;    /* Amarillo/Melocotón claro */
+}
+
+/* ESTILOS GENERALES Y TIPOGRAFÍA */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto-oscuro);
+    padding-top: 56px; 
+}
+
+h1, h2, h3, .texto-resaltado {
+    font-weight: 700;
+    color: var(--color-texto-oscuro);
+}
+
+/* ESTILOS DE SECCIÓN GENERALES */
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.bg-light {
+    background-color: #f5f0f0 !important; /* Un fondo ligeramente diferente al principal */
+}
+
+/* LAYOUT CON FLEXBOX (Para centrar la presentación) */
+.seccion-presentacion {
+    height: 90vh;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    padding: 80px 0;
+    background: radial-gradient(circle at 10% 20%, rgba(255, 230, 230, 0.5) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(216, 167, 167, 0.5) 0%, transparent 50%),
+                var(--color-fondo-principal);
+}
+
+/* NAVBAR Y ESTADO ACTIVO */
+#navegacionPrincipal {
+    background-color: var(--color-nav-fondo);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .enlace-nav {
+    color: var(--color-texto-claro);
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding: 10px 15px;
+}
+
+.navbar-nav .enlace-nav:hover {
+    color: var(--color-acento-principal);
+}
+
+.navbar-nav .enlace-nav.activo {
+    color: var(--color-acento-principal);
+    border-bottom: 2px solid var(--color-acento-principal);
+}
+
+/* ESTILO DE LA TARJETA PRINCIPAL (Presentación) */
+.contenedor-tarjeta-principal {
+    max-width: 900px;
+    width: 90%;
+    background-color: var(--color-tarjeta-fondo);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+    overflow: hidden;
+}
+
+.imagen-perfil {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px;
+}
+
+.cuerpo-tarjeta {
+    padding: 30px;
+}
+
+/* ======================================= */
+/* 🚀 SECCIÓN HABILIDADES (Skills) */
+/* ======================================= */
+
+.progress {
+    height: 1.5rem;
+    background-color: #e9ecef; /* Fondo de progreso sutil */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    color: var(--color-texto-oscuro);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Colores pastel para las barras de progreso */
+.progress-bar.bg-primary { background-color: var(--pastel-primary) !important; }
+.progress-bar.bg-info { background-color: var(--pastel-info) !important; }
+.progress-bar.bg-success { background-color: var(--pastel-success) !important; }
+.progress-bar.bg-warning { background-color: var(--pastel-warning) !important; }
+
+
+/* ======================================= */
+/* 🎓 SECCIÓN FORMACIÓN Y EXPERIENCIA */
+/* ======================================= */
+
+.tarjeta-formacion, .tarjeta-experiencia {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-acento-principal); /* Borde de acento */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.lista-certificaciones .list-group-item {
+    border: none;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.lista-certificaciones .list-group-item:hover {
+    background-color: rgba(216, 167, 167, 0.1); /* Hover suave */
+}
+
+/* Estilo para los badges */
+.lista-certificaciones .badge {
+    background-color: var(--color-acento-principal) !important;
+    color: var(--color-texto-claro);
+    font-weight: normal;
+}
+
+/* Estilos para la lista de logros en Experiencia */
+.tarjeta-experiencia ul li {
+    padding: 5px 0;
+    /* Uso de display: flex para alinear checkmark */
+    display: flex;
+    align-items: flex-start;
+}
+
+.tarjeta-experiencia .text-success {
+    color: #4CAF50 !important; /* Verde estándar para check */
+}
+
+/* ======================================= */
+/* 📜 SECCIÓN REFERENCIAS */
+/* ======================================= */
+
+.alert-info {
+    background-color: #e0f7fa; /* Azul claro pastel */
+    border-color: #b3e5fc;
+    color: #00796b;
+}
+
+/* ======================================= */
+/* 📧 SECCIÓN CONTACTO */
+/* ======================================= */
+
+#contacto {
+    background-color: var(--color-fondo-principal);
+}
+
+/* Estilos para los íconos de redes sociales */
+#contacto .fa-2x {
+    color: var(--color-texto-oscuro);
+    transition: color 0.3s ease;
+}
+
+#contacto .fa-2x:hover {
+    color: var(--color-acento-principal);
+}
+
+/* Estilo del botón de envío */
+#contacto .btn-primary {
+    background-color: var(--color-acento-principal);
+    border-color: var(--color-acento-principal);
+    transition: all 0.3s ease;
+}
+
+#contacto .btn-primary:hover {
+    background-color: #c59696; /* Tono más oscuro al pasar el ratón */
+    border-color: #c59696;
+}
+
+/* DISEÑO RESPONSIVO */
+@media (max-width: 768px) {
+    .seccion-presentacion {
+        height: auto;
+        padding: 50px 0;
+    }
+    .contenedor-tarjeta-principal {
+        border-radius: 10px;
+    }
+    .imagen-perfil {
+        height: 250px; 
+        border-radius: 10px 10px 0 0; 
+    }
+}
