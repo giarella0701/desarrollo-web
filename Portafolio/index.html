@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-<!--Barra de navegacion con Boostrap-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navegacionPrincipal">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navegacionPrincipal">
         <div class="container">
             <a class="navbar-brand" href="#presentacion">Mi Portafolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuColapsable" aria-controls="menuColapsable" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +21,7 @@
                     <li class="nav-item"><a class="nav-link enlace-nav" href="#habilidades">Habilidades</a></li>
                     <li class="nav-item"><a class="nav-link enlace-nav" href="#formacion">Formación</a></li>
                     <li class="nav-item"><a class="nav-link enlace-nav" href="#experiencia">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link enlace-nav" href="#portafolio">Portafolio</a></li>
                     <li class="nav-item"><a class="nav-link enlace-nav" href="#referencias">Referencias</a></li>
                     <li class="nav-item"><a class="nav-link enlace-nav" href="#contacto">Contacto</a></li>
                 </ul>
@@ -31,7 +31,7 @@
 
     <main data-bs-spy="scroll" data-bs-target="#navegacionPrincipal" data-bs-root-margin="0px 0px -40% 0px" data-bs-smooth-scroll="true" tabindex="0">
         
-<section id="presentacion" class="seccion-presentacion">
+        <section id="presentacion" class="seccion-presentacion">
             <img src="static/resources/images/primer-plano-hermosa-flor-florecida_23-2148862744.jpg" alt="Fondo abstracto sutil" class="img-fondo-hero"> 
             
             <div class="container">
@@ -56,25 +56,25 @@
                     <div class="col-md-6 mb-4">
                         <h5 class="fw-bold">HTML5 y CSS (Diseño Responsivo)</h5>
                         <div class="progress" role="progressbar" aria-label="Progreso HTML/CSS" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-primary" style="width: 75%">75%</div>
+                            <div class="progress-bar bar-pastel-azul" style="width: 75%">75%</div>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <h5 class="fw-bold">Empatica</h5>
                         <div class="progress" role="progressbar" aria-label="Progreso JS" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-info" style="width: 83%">83%</div>
+                            <div class="progress-bar bar-pastel-turquesa" style="width: 83%">83%</div>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <h5 class="fw-bold">Creatividad</h5>
                         <div class="progress" role="progressbar" aria-label="Progreso Bootstrap" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-success" style="width: 90%">90%</div>
+                            <div class="progress-bar bar-pastel-verde" style="width: 90%">90%</div>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4">
                         <h5 class="fw-bold">Trabajo en Equipo y Autonomía</h5>
                         <div class="progress" role="progressbar" aria-label="Progreso Blando" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-warning" style="width: 87%">87%</div>
+                            <div class="progress-bar bar-pastel-melocoton" style="width: 87%">87%</div>
                         </div>
                     </div>
                 </div>
@@ -122,8 +122,42 @@
                 </div>
             </div>
         </section>
-        
-        <section id="referencias" class="py-5 bg-light">
+
+        <section id="portafolio" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Portafolio de Proyectos Clave</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                    
+                    <div class="col">
+                        <div class="card h-100 tarjeta-proyecto" 
+                            onmouseover="resaltarElemento(this)" 
+                            onmouseout="restaurarElemento(this)">
+                            <img src="static/resources/images/ecosense.png" class="card-img-top" alt="Captura de pantalla del Proyecto Eco-Sense">
+                            <div class="card-body">
+                                <h5 class="card-title">Eco-Sense Landing Page</h5>
+                                <p class="card-text">Maquetación responsiva con HTML/CSS/Bootstrap para una startup de conciencia ambiental.</p>
+                                <a href="https://github.com/giarella0701/desarrollo-web/tree/main/proyecto_tp" target="_blank" class="btn btn-outline-primary">Ver Repositorio</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 tarjeta-proyecto"
+                            onmouseover="resaltarElemento(this)" 
+                            onmouseout="restaurarElemento(this)">
+                            <img src="static/resources/images/sitiotiempo.png" class="card-img-top" alt="Captura de proyecto de análisis de datos">
+                            <div class="card-body">
+                                <h5 class="card-title">Proyecto Final</h5>
+                                <p class="card-text">Un proyecto más sencillo, fue la creacion de un sitio web de tiempo.</p>
+                                <a href="https://github.com/giarella0701/desarrollo-web/tree/main/3.7_sitio_tiempo" target="_blank" class="btn btn-outline-primary">Ver Repositorio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="referencias" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-5">Referencias</h2>
                 <div class="row justify-content-center">
@@ -144,7 +178,7 @@
             </div>
         </section>
 
-        <section id="contacto" class="py-5">
+        <section id="contacto" class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center mb-5">Conversemos</h2>
                 <p class="text-center lead">Estoy disponible para nuevos desafíos o colaboraciones. ¡Hablemos!</p>
@@ -154,11 +188,30 @@
                             <li><a href="mailto:Giarellaavello@liceovvh.cl" class="text-decoration-none text-dark"><i class="fas fa-envelope fa-2x"></i></a></li>
                             <li><a href="https://github.com/giarella0701" target="_blank" class="text-decoration-none text-dark"><i class="fab fa-github fa-2x"></i></a></li>
                         </ul>
-                        <h4 class="text-center mb-3">Envía un Mensaje Directo</h4>
+                        
+                        <h4 class="text-center mb-3">Ejemplos de Interactividad JS</h4>
+                        
+                        <button type="button" class="btn btn-secondary w-100 mb-3" onclick="alternarDetalles(this)">
+                            Mostrar/Ocultar Texto (onclick)
+                        </button>
+                        <p id="textoInteractivo" style="display: none; text-align: center; font-style: italic;">
+                            ¡El evento 'onclick' ejecutado con 'this' ha funcionado!
+                        </p>
+                        
+                        <div class="mb-5">
+                            <label for="selectorEstilo" class="form-label">Cambiar Estilo de Fondo (onchange)</label>
+                            <select id="selectorEstilo" class="form-select" onchange="aplicarCambio(this)">
+                                <option value="default">Original</option>
+                                <option value="azul">Tema Azul Claro</option>
+                                <option value="rojo">Tema Rojo Suave</option>
+                            </select>
+                        </div>
+
+                        <h4 class="text-center mb-3 mt-5">Envía un Mensaje Directo</h4>
                         <form>
                             <div class="mb-3">
                                 <label for="nombreUsuario" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombreUsuario" required>
+                            <input type="text" class="form-control" id="nombreUsuario" required>
                             </div>
                             <div class="mb-3">
                                 <label for="emailUsuario" class="form-label">Email</label>

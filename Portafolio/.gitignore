@@ -1,0 +1,44 @@
+# ===============================
+# 💾 Archivos de Entorno y Sistema
+# ===============================
+
+# Archivos de macOS
+.DS_Store
+
+# Archivos de Windows (miniaturas y caché de imágenes)
+Thumbs.db
+Desktop.ini
+
+# Archivos de Linux (temporales)
+*~
+
+# ===============================
+# 📦 Dependencias y Entornos Virtuales
+# ===============================
+
+# Dependencias de Node.js (Si instalas Bootstrap con npm)
+node_modules/
+
+# Entornos virtuales de Python (solicitado en la lista de cotejo)
+.venv/
+venv/
+env/
+
+# ===============================
+# 💻 Configuración de Editores/IDE
+# ===============================
+
+# Configuración de Visual Studio Code
+.vscode/
+
+# Configuración de JetBrains (ej. WebStorm)
+.idea/
+
+# ===============================
+# 📄 Archivos Temporales y Logs
+# ===============================
+
+# Logs y archivos temporales
+*.log
+*.tmp
+temp/

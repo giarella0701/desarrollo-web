@@ -1,0 +1,38 @@
+# 👩‍💻 Portafolio Profesional: Giarella Avello
+
+Este es mi sitio web profesional, desarrollado como proyecto de evaluación para la asignatura de Programación Web. Combina mi Currículum Vitae (CV) con un Portafolio de proyectos clave, buscando demostrar mis habilidades técnicas en desarrollo Front-End.
+
+---
+
+## 🎯 Objetivo
+
+El objetivo de este proyecto es presentar de manera clara y estética mi perfil como Desarrolladora Web Front-End, destacando mi formación, habilidades técnicas y blandas, y experiencia práctica en el diseño y maquetación responsiva.
+
+---
+
+## ✨ Tecnologías Utilizadas
+
+| Tecnología | Rol en el Proyecto |
+| :--- | :--- |
+| **HTML5** | Estructura semántica del contenido. |
+| **CSS3** | Estilos personalizados, paleta de colores pastel y diseño responsivo. |
+| **Bootstrap 5.3** | Framework para la grilla, componentes (Navbar, Cards, Progress Bars). |
+| **JavaScript (JS)** | Implementación de interactividad (scroll-spy, efectos `onmouseover`, etc.). |
+| **Font Awesome** | Iconografía profesional para secciones de Habilidades, Experiencia y Contacto. |
+
+---
+
+## 🛠️ Instrucciones de Visualización y Despliegue
+
+Este proyecto está diseñado para ser visualizado directamente desde **GitHub Pages**.
+
+### 🔗 Enlaces Importantes
+
+| Enlace | Descripción |
+| :--- | :--- |
+| **Página Web Desplegada (GitHub Pages)** | [http://127.0.0.1:5501/Portafolio/index.html] |
+| **Repositorio en GitHub** | [https://github.com/giarella0701/desarrollo-web/tree/main/Portafolio] |
+
+### 📂 Estructura de Archivos
+
+El proyecto sigue una estructura de carpetas profesional:

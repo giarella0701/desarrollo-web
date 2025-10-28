@@ -1,39 +1,54 @@
 /*
-  Archivo: style.css
-  Propósito: Estilos para portafolio profesional con paleta pastel.
-  Estructura simplificada, uso de variables y clases en español.
+  Archivo: style.css
+  Propósito: Estilos para portafolio profesional con paleta pastel.
+  Estructura simplificada, uso de variables y clases en español.
 */
 
 /* ======================================= */
 /* 🎨 1. VARIABLES DE COLOR (Paleta Pastel) */
 /* ======================================= */
 :root {
-    --color-fondo-principal: #f5c9f1;       /* Fondo principal (Rosa/Púrpura suave) */
-    --color-acento-principal: #ac49b9;      /* Púrpura suave (Para acentos y hover) */
-    --color-tarjeta-fondo: #FFFFFF;         /* Blanco puro (Para el contenido de la tarjeta) */
-    --color-texto-oscuro: #161515;          /* Negro suave */
-    --color-texto-claro: #FFFFFF;           /* Texto sobre fondo oscuro */
-    --color-nav-fondo: rgba(232, 138, 245, 0.9); /* Púrpura semi-transparente para nav */
-    
-    /* Colores pastel para Habilidades */
-    --pastel-primary: #a2c8f0;      /* Azul claro */
-    --pastel-info: #b3e0d8;         /* Turquesa claro */
-    --pastel-success: #c5e8c4;      /* Verde claro */
-    --pastel-warning: #f8e5c4;      /* Melocotón claro */
+    --color-fondo-principal: #f5c9f1;
+    /* Fondo principal (Rosa/Púrpura suave) */
+    --color-acento-principal: #ac49b9;
+    /* Púrpura suave (Para acentos y hover) */
+    --color-tarjeta-fondo: #FFFFFF;
+    /* Blanco puro (Para el contenido de la tarjeta) */
+    --color-texto-oscuro: #161515;
+    /* Negro suave */
+    --color-texto-claro: #FFFFFF;
+    /* Texto sobre fondo oscuro */
+    --color-nav-fondo: rgba(232, 138, 245, 0.9);
+    /* Púrpura semi-transparente para nav */
+
+    /* Colores pastel para Habilidades (RESTAURADOS) */
+    --pastel-primary: #a2c8f0;
+    /* Azul claro */
+    --pastel-info: #b3e0d8;
+    /* Turquesa claro */
+    --pastel-success: #c5e8c4;
+    /* Verde claro */
+    --pastel-warning: #f8e5c4;
+    /* Melocotón claro */
 }
 
 /* ======================================= */
 /* 🌎 2. ESTILOS BASE Y TIPOGRAFÍA */
 /* ======================================= */
 body {
-    font-family: 'Arial', sans-serif; /* Usar 'Montserrat' si se importó en el HTML */
+    font-family: 'Arial', sans-serif;
+    /* Usar 'Montserrat' si se importó en el HTML */
     background-color: var(--color-fondo-principal);
     color: var(--color-texto-oscuro);
-    padding-top: 56px; /* Para el navbar fijo */
+    padding-top: 56px;
+    /* Para el navbar fijo */
     line-height: 1.6;
 }
 
-h1, h2, h3, .texto-resaltado {
+h1,
+h2,
+h3,
+.texto-resaltado {
     font-weight: 700;
     color: var(--color-texto-oscuro);
 }
@@ -45,7 +60,8 @@ section {
 }
 
 .bg-light {
-    background-color: #f5f0f0 !important; /* Fondo alterno sutil */
+    background-color: #f5f0f0 !important;
+    /* Fondo alterno sutil (se mantiene el !important por especificidad de Bootstrap) */
 }
 
 
@@ -79,11 +95,12 @@ section {
 /* 🌟 4. SECCIÓN PRESENTACIÓN (HERO) */
 /* ======================================= */
 .seccion-presentacion {
-    height: 100vh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    position: relative; /* Contenedor para la imagen absoluta */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Contenedor para la imagen absoluta */
     background-color: var(--color-fondo-principal);
     padding: 0;
 }
@@ -95,21 +112,25 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    z-index: 0; 
-    opacity: 0.45; /* Sutil transparencia pastel */
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.45;
+    /* Sutil transparencia pastel */
 }
 
 /* Tarjeta Principal Flotante */
 .contenedor-tarjeta-principal {
     max-width: 900px;
     width: 90%;
-    background-color: var(--color-tarjeta-fondo); /* Fondo de la tarjeta (Blanco) */
+    background-color: var(--color-tarjeta-fondo);
+    /* Fondo de la tarjeta (Blanco) */
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    /* Sombra suave */
     overflow: hidden;
-    position: relative; 
-    z-index: 10; /* La tarjeta siempre encima */
+    position: relative;
+    z-index: 10;
+    /* La tarjeta siempre encima */
 }
 
 .imagen-perfil {
@@ -118,7 +139,7 @@ section {
     width: 100%;
     display: block;
     /* Redondeo solo en la parte izquierda para la vista de escritorio */
-    border-top-left-radius: 8px; 
+    border-top-left-radius: 8px;
     border-bottom-left-radius: 10px;
 }
 
@@ -140,30 +161,47 @@ section {
     color: var(--color-texto-oscuro);
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-    transition: width 1s ease-in-out; /* Animación de carga */
+    transition: width 1s ease-in-out;
+    /* Animación de carga */
 }
 
-/* Colores pastel para las barras de progreso */
-.progress-bar.bg-primary { background-color: var(--pastel-primary) !important; }
-.progress-bar.bg-info { background-color: var(--pastel-info) !important; }
-.progress-bar.bg-success { background-color: var(--pastel-success) !important; }
-.progress-bar.bg-warning { background-color: var(--pastel-warning) !important; }
+/* Clases propias para los tonos pastel */
+.progress-bar.bar-pastel-azul {
+    background-color: var(--pastel-primary);
+}
+
+.progress-bar.bar-pastel-turquesa {
+    background-color: var(--pastel-info);
+}
+
+.progress-bar.bar-pastel-verde {
+    background-color: var(--pastel-success);
+}
+
+.progress-bar.bar-pastel-melocoton {
+    background-color: var(--pastel-warning);
+}
 
 
 /* ======================================= */
-/* 🎓 6. FORMACIÓN, EXPERIENCIA y REFERENCIAS (Tarjetas de CV) */
+/* 🎓 6. FORMACIÓN, EXPERIENCIA, REFERENCIAS y PORTAFOLIO (Tarjetas de CV/Proyecto) */
 /* ======================================= */
 
-.tarjeta-formacion, .tarjeta-experiencia {
+.tarjeta-formacion,
+.tarjeta-experiencia,
+.tarjeta-proyecto {
     border: 1px solid rgba(0, 0, 0, 0.05);
-    border-left: 5px solid var(--color-acento-principal); /* Borde de acento */
+    border-left: 5px solid var(--color-acento-principal);
+    /* Borde de acento */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
-.tarjeta-formacion:hover, .tarjeta-experiencia:hover {
-    transform: translateY(-3px); /* Efecto lift sutil */
+.tarjeta-formacion:hover,
+.tarjeta-experiencia:hover {
+    transform: translateY(-3px);
+    /* Efecto lift sutil */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -176,7 +214,8 @@ section {
 }
 
 .lista-certificaciones .list-group-item:hover {
-    background-color: rgba(172, 73, 185, 0.05); /* Hover con acento */
+    background-color: rgba(172, 73, 185, 0.05);
+    /* Hover con acento */
 }
 
 .lista-certificaciones .badge {
@@ -192,7 +231,8 @@ section {
 }
 
 .tarjeta-experiencia .fa-check-circle {
-    color: #4CAF50 !important; /* Verde estándar para check */
+    color: #4CAF50 !important;
+    /* Verde estándar para check */
     margin-right: 8px;
 }
 
@@ -202,6 +242,12 @@ section {
     border-color: #eb9cd3;
     color: #790069;
     border-left: 5px solid var(--color-acento-principal);
+}
+
+/* Estilos específicos para tarjetas de proyecto (Portafolio) */
+.tarjeta-proyecto img {
+    height: 200px;
+    object-fit: cover;
 }
 
 
@@ -233,7 +279,8 @@ section {
 }
 
 #contacto .btn-primary:hover {
-    background-color: #8c369a; /* Tono más oscuro al pasar el ratón */
+    background-color: #8c369a;
+    /* Tono más oscuro al pasar el ratón */
     border-color: #8c369a;
 }
 
@@ -246,13 +293,15 @@ section {
         height: auto;
         padding: 50px 0;
     }
+
     .contenedor-tarjeta-principal {
         width: 95%;
         border-radius: 10px;
     }
+
     .imagen-perfil {
-        height: 250px; 
+        height: 250px;
         /* Redondeo para móviles */
-        border-radius: 10px 10px 0 0; 
+        border-radius: 10px 10px 0 0;
     }
 }
